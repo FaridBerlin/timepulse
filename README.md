@@ -2,7 +2,7 @@
 
 Terminal ttl clock, including customizable clock timer and stopwatch
 
-![feature]()
+![feature](img/feature.png)
 
 # Contents
 
@@ -116,7 +116,7 @@ timepulse timer -t 1:20:01
 
 You can use color codes (down below) or use color names
 
-![color](https://github.com/MHNightCat/timepulse/blob/main/img/color.png)
+![color](img/color.png)
 
 ```
 black
@@ -146,7 +146,7 @@ Example:
 timepulse clock -c red
 ```
 
-![red-clock](https://github.com/MHNightCat/timepulse/blob/main/img/red-clock.png)
+![red-clock](img/red-clock.png)
 
 ### **Colon-color**
 
@@ -158,7 +158,7 @@ To use a custom colon color just enter `-cc color`
 timepulse clock -cc color
 ```
 
-![custom-colon-color](https://github.com/MHNightCat/timepulse/blob/main/img/custom-colon-color.png)
+![custom-colon-color](img/custom-colon-color.png)
 
 ## **Disable-second**
 
@@ -170,7 +170,7 @@ To disable the second just enter `-s false`
 timepulse clock -s false
 ```
 
-![no-sec-clock](https://github.com/MHNightCat/timepulse/blob/main/img/no-sec-clock.png)
+![no-sec-clock](img/no-sec-clock.png)
 
 ## **Enable-date**
 
@@ -182,7 +182,7 @@ To enable the date just enter `-d true`
 timepulse clock -d true
 ```
 
-![date-clock](https://github.com/MHNightCat/timepulse/blob/main/img/date-clock.png)
+![date-clock](img/date-clock.png)
 
 ## **Date-formate**
 
@@ -196,7 +196,7 @@ timepulse clock -d true -df 2006/01/02
 
 (YYYY/DD/MM)
 
-![date-format-clock](https://github.com/MHNightCat/timepulse/blob/main/img/date-format-clock.png)
+![date-format-clock](img/date-format-clock.png)
 
 ```bash
 timepulse clock -d true -df 02/01/2006
@@ -204,7 +204,7 @@ timepulse clock -d true -df 02/01/2006
 
 (MM/DD/YYYY)
 
-![date-format-2-clock](https://github.com/MHNightCat/timepulse/blob/main/img/date-format-2-clock.png)
+![date-format-2-clock](img/date-format-2-clock.png)
 
 ## **Disable-hour**
 
@@ -218,7 +218,7 @@ To use a custom date format just enter `-dh true`(YYYY/MM/DD)
 timepulse stopwatch -dh true
 ```
 
-![disable-hour-stopwatch](https://github.com/MHNightCat/timepulse/blob/main/img/disable-hour-stopwatch.png)
+![disable-hour-stopwatch](img/disable-hour-stopwatch.png)
 
 ## **12-hours-format**
 

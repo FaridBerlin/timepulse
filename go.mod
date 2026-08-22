@@ -1,4 +1,4 @@
-module github.com/MHNightCat/timepulse
+module github.com/FaridBerlin/timepulse
 
 go 1.21.0
 

@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/MHNightCat/timepulse/util"
+	"github.com/FaridBerlin/timepulse/util"
 	"github.com/urfave/cli/v2"
 )
 
@@ -14,7 +14,7 @@ func main() {
 			&cli.StringFlag{
 				Name:    "color",
 				Aliases: []string{"c"},
-				Usage:   "Set the string color see full color in(https://github.com/MHNightCat/timepulse?tab=readme-ov-file#color)",
+				Usage:   "Set the string color see full color in(https://github.com/FaridBerlin/timepulse?tab=readme-ov-file#color)",
 			},
 		},
 		Commands: []*cli.Command{
@@ -27,7 +27,7 @@ func main() {
 					&cli.StringFlag{
 						Name:    "color",
 						Aliases: []string{"c"},
-						Usage:   "Set the string color (https://github.com/MHNightCat/timepulse?tab=readme-ov-file#color)",
+						Usage:   "Set the string color (https://github.com/FaridBerlin/timepulse?tab=readme-ov-file#color)",
 					},
 					&cli.StringFlag{
 						Name:    "disable-hour",
@@ -37,7 +37,7 @@ func main() {
 					&cli.StringFlag{
 						Name:    "colon-color",
 						Aliases: []string{"cc"},
-						Usage:   "Set the colon color (https://github.com/MHNightCat/timepulse?tab=readme-ov-file#color)",
+						Usage:   "Set the colon color (https://github.com/FaridBerlin/timepulse?tab=readme-ov-file#color)",
 					},
 				},
 			},
@@ -50,7 +50,7 @@ func main() {
 					&cli.StringFlag{
 						Name:    "color",
 						Aliases: []string{"c"},
-						Usage:   "Set the string color (https://github.com/MHNightCat/timepulse?tab=readme-ov-file#color)",
+						Usage:   "Set the string color (https://github.com/FaridBerlin/timepulse?tab=readme-ov-file#color)",
 					},
 					&cli.StringFlag{
 						Name:    "hour",
@@ -85,7 +85,7 @@ func main() {
 					&cli.StringFlag{
 						Name:    "colon-color",
 						Aliases: []string{"cc"},
-						Usage:   "Set the colon color (https://github.com/MHNightCat/timepulse?tab=readme-ov-file#color)",
+						Usage:   "Set the colon color (https://github.com/FaridBerlin/timepulse?tab=readme-ov-file#color)",
 					},
 				},
 			},
@@ -122,7 +122,7 @@ func main() {
 					&cli.StringFlag{
 						Name:    "colon-color",
 						Aliases: []string{"cc"},
-						Usage:   "Set the colon color (https://github.com/MHNightCat/timepulse?tab=readme-ov-file#color)",
+						Usage:   "Set the colon color (https://github.com/FaridBerlin/timepulse?tab=readme-ov-file#color)",
 					},
 					&cli.StringFlag{
 						Name:    "hour-format",
