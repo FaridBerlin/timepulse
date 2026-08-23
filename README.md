@@ -26,14 +26,71 @@ see [release]()
 
 download timepulse file and move it to /usr/local/bin
 
+Fyne requires these Linux development packages to build the desktop version:
+
+```bash
+sudo apt install pkg-config libgl1-mesa-dev libx11-dev \
+   libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev libxxf86vm-dev
+```
+
 ```bash
 sudo mv ./timepulse /usr/local/bin
 ```
 
 # Usage
 
+To open the desktop application:
+
+```bash
+timepulse gui
+```
+
+It includes clock, stopwatch, and timer tabs. Close the window normally and
+open it again from the desktop application menu.
+
+To add it to the Linux application menu, build the binary and install the
+launcher:
+
+```bash
+go build -o timepulse .
+sudo install -m 755 timepulse /usr/local/bin/timepulse
+mkdir -p ~/.local/share/applications
+cp timepulse.desktop ~/.local/share/applications/timepulse.desktop
+```
+
+The commands have one-letter aliases:
+
+```bash
+timepulse c  # clock
+timepulse s  # stopwatch
+timepulse t  # timer
+```
+
+To use the shorter `t c` and `t s` forms in Bash or Zsh, run this command:
+
+```bash
+alias t=timepulse
+```
+
+You can then use:
+
+```bash
+t c  # clock
+t s  # stopwatch
+t t  # timer
+```
+
+To enable it automatically in future Bash sessions, add the alias to
+`~/.bashrc`:
+
+```bash
+echo 'alias t=timepulse' >> ~/.bashrc
+source ~/.bashrc
+```
+
 ```
 COMMANDS:
+   gui             Open the desktop application
    stopwatch, s  Start a stopwatch
    timer, t      Start a timer
    clock, c      Start a clock
@@ -45,54 +102,56 @@ GLOBAL OPTIONS:
    --version, -v            print the version
 ```
 
-## Clock
-
-```
 NAME:
-   timepulse clock - Start a clock
+timepulse clock - Start a clock
 
 USAGE:
-   timepulse clock [command options] [arguments...]
+timepulse clock [command options] [arguments...]
 
 OPTIONS:
-   --color value, -c value                Set the string color
-   --second value, -s value, --sec value  Set the clock with second(true or false) (default: "true")
-   --date value, -d value                 Set the clock with date(true or false) (default: "false")
-   --dateformate value, --df value        Set the clock date formate (default: "2006/02/01")
-   --colon-color value, --cc value        Set the colon color
-   --hour-format value, --hf value        Set the clock 24 hr or 12hr (type 24 or 12)
-   --help, -h                             show help
+--color value, -c value Set the string color
+--second value, -s value, --sec value Set the clock with second(true or false) (default: "true")
+--date value, -d value Set the clock with date(true or false) (default: "false")
+--dateformate value, --df value Set the clock date formate (default: "2006/02/01")
+--colon-color value, --cc value Set the colon color
+--hour-format value, --hf value Set the clock 24 hr or 12hr (type 24 or 12)
+--help, -h show help
+
 ```
 
 ## Stopwatch
 
 ```
+
 USAGE:
-   timepulse stopwatch [command options] [arguments...]
+timepulse stopwatch [command options] [arguments...]
 
 OPTIONS:
-   --color value, -c value           Set the string color
-   --disable-hour value, --dh value  Disable hour(true or false)
-   --colon-color value, --cc value   Set the colon color
-   --help, -h                        show help
+--color value, -c value Set the string color
+--disable-hour value, --dh value Disable hour(true or false)
+--colon-color value, --cc value Set the colon color
+--help, -h show help
+
 ```
 
 ## Timer
 
 ```
+
 USAGE:
-   timepulse timer [command options] [arguments...]
+timepulse timer [command options] [arguments...]
 
 OPTIONS:
-   --color value, -c value                Set the string color
-   --hour value, --hr value               Enter how many hours you want to count down
-   --minute value, -m value, --min value  Enter how many minunts you want to count down
-   --second value, -s value, --sec value  Enter how many seconds you want to count down
-   --time value, -t value                 Enter how many time you want to count down(format: 00:00:00)
-   --disable-hour value, --dh value       Disable hour(true or false)
-   --colon-color value, --cc value        Set the colon color
-   --help, -h                             show help
-```
+--color value, -c value Set the string color
+--hour value, --hr value Enter how many hours you want to count down
+--minute value, -m value, --min value Enter how many minunts you want to count down
+--second value, -s value, --sec value Enter how many seconds you want to count down
+--time value, -t value Enter how many time you want to count down(format: 00:00:00)
+--disable-hour value, --dh value Disable hour(true or false)
+--colon-color value, --cc value Set the colon color
+--help, -h show help
+
+````
 
 #### **Example**
 
@@ -102,7 +161,7 @@ classic:
 
 ```bash
 timepulse timer -hr 1 -m 1 -s 1
-```
+````
 
 lazy:
 

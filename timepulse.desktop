@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Timepulse
+Comment=Clock, stopwatch, and timer
+Exec=/usr/local/bin/timepulse gui
+Terminal=false
+Type=Application
+Categories=Utility;Clock;

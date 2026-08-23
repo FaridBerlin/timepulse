@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/FaridBerlin/timepulse/gui"
 	"github.com/FaridBerlin/timepulse/util"
 	"github.com/urfave/cli/v2"
 )
@@ -18,6 +19,11 @@ func main() {
 			},
 		},
 		Commands: []*cli.Command{
+			{
+				Name:   "gui",
+				Usage:  "Open the desktop application",
+				Action: func(*cli.Context) error { return gui.Run() },
+			},
 			{
 				Name:    "stopwatch",
 				Aliases: []string{"s"},
