@@ -2,7 +2,9 @@
 
 Terminal ttl clock, including customizable clock timer and stopwatch
 
-![feature]
+The application now also provides a rich **desktop graphical interface** with separate tabs for Clock, Stopwatch and Timer. Below are screenshots of the UI and an animated demonstration of the application in action.
+
+![Full Demo GIF](desktop-img/desktop-demo.gif)
 
 # Contents
 
