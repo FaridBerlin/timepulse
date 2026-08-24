@@ -2,7 +2,7 @@
 
 Terminal ttl clock, including customizable clock timer and stopwatch
 
-![feature](img/feature.png)
+![feature]
 
 # Contents
 
