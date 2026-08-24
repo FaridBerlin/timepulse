@@ -1,6 +1,6 @@
 ## About timepulse
 
-Terminal ttl clock, including customizable clock timer and stopwatch
+A lightweight, customizable time utility that works both as a terminal command-line tool **and** as a native desktop application (built with Fyne). It provides a live clock, stopwatch, countdown timer, optional date display, colour themes and flexible formatting options.
 
 ![feature](img/feature.png)
 
