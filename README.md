@@ -38,6 +38,10 @@ sudo apt install pkg-config libgl1-mesa-dev libx11-dev \
 ```bash
 sudo mv ./timepulse /usr/local/bin
 ```
+or
+```bash
+go run . gui
+```
 
 # Usage
 
