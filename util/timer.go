@@ -15,6 +15,31 @@ var SmallTimerWithoutHourDiff = [11]int{7, 6, 6, 7, 6, 4, 7, 7}
 var SmallTimerWithoutHourAndMillisecondDiff = [11]int{7, 6, 6, 7, 6}
 var SmallTimerWithoutMillisecondDiff = [11]int{7, 6, 6, 7, 6, 6, 7, 6}
 
+// timerTotalSeconds resolves the countdown duration in seconds from the timer
+// flags. When --time is set it takes priority and is parsed on its own
+// (rather than being added on top of --hour/--minute/--second); otherwise the
+// individual unit flags are combined. A duration that resolves to zero falls
+// back to the default 5-minute countdown.
+func timerTotalSeconds(hourStr, minuteStr, secondStr, timeStr string) (int, error) {
+	var total int
+	if timeStr != "" {
+		seconds, err := timeStringToSeconds(timeStr)
+		if err != nil {
+			return 0, err
+		}
+		total = seconds
+	} else {
+		hour, _ := strconv.Atoi(hourStr)
+		minute, _ := strconv.Atoi(minuteStr)
+		second, _ := strconv.Atoi(secondStr)
+		total = hour*3600 + minute*60 + second
+	}
+	if total == 0 {
+		total = 300
+	}
+	return total, nil
+}
+
 func Timer(cCtx *cli.Context) error {
 	err := termbox.Init()
 	if err != nil {
@@ -25,19 +50,10 @@ func Timer(cCtx *cli.Context) error {
 	termbox.SetOutputMode(termbox.Output256)
 	color := FlagColor(cCtx.String("color"))
 
-	min, _ := strconv.Atoi(cCtx.String("minute"))
-	sec, _ := strconv.Atoi(cCtx.String("second"))
-	hour, _ := strconv.Atoi(cCtx.String("hour"))
-
-	total := hour*60*60 + min*60 + sec*60
-
-	if cCtx.String("time") != "" {
-		seconds, _ := timeStringToSeconds(cCtx.String("time"))
-		total = total + seconds
-	}
-
-	if total == 0 {
-		total = 300
+	total, err := timerTotalSeconds(cCtx.String("hour"), cCtx.String("minute"), cCtx.String("second"), cCtx.String("time"))
+	if err != nil {
+		fmt.Println("invalid duration:", err)
+		return err
 	}
 	termbox.Clear(termbox.ColorDefault, termbox.ColorDefault)
 	colonColor := FlagColor(cCtx.String("colon-color"))
@@ -100,7 +116,7 @@ func Timer(cCtx *cli.Context) error {
 			}
 			termbox.Flush()
 
-			time.Sleep(time.Millisecond)
+			time.Sleep(10 * time.Millisecond)
 		}
 	}()
 

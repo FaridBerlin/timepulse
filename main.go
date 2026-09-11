@@ -11,13 +11,6 @@ import (
 
 func main() {
 	app := &cli.App{
-		Flags: []cli.Flag{
-			&cli.StringFlag{
-				Name:    "color",
-				Aliases: []string{"c"},
-				Usage:   "Set the string color see full color in(https://github.com/FaridBerlin/timepulse?tab=readme-ov-file#color)",
-			},
-		},
 		Commands: []*cli.Command{
 			{
 				Name:   "gui",

@@ -10,27 +10,27 @@ import (
 )
 
 func StopwatchFormatTime(d time.Duration, disableMillisecond bool) string {
-    h := d / time.Hour
-    d -= h * time.Hour
-    m := d / time.Minute
-    d -= m * time.Minute
-    s := d / time.Second
-    if disableMillisecond {
-        return fmt.Sprintf("%02d:%02d:%02d", h, m, s)
-    }
-    ms := d % time.Second / time.Millisecond
-    return fmt.Sprintf("%02d:%02d:%02d.%03d", h, m, s, ms)
+	h := d / time.Hour
+	d -= h * time.Hour
+	m := d / time.Minute
+	d -= m * time.Minute
+	s := d / time.Second
+	if disableMillisecond {
+		return fmt.Sprintf("%02d:%02d:%02d", h, m, s)
+	}
+	ms := d % time.Second / time.Millisecond
+	return fmt.Sprintf("%02d:%02d:%02d.%03d", h, m, s, ms)
 }
 
 func StopwatchFormatTimeWihtoutHour(d time.Duration, disableMillisecond bool) string {
-    m := d / time.Minute
-    d -= m * time.Minute
-    s := d / time.Second
-    if disableMillisecond {
-        return fmt.Sprintf("%02d:%02d", m, s)
-    }
-    ms := d % time.Second / time.Millisecond
-    return fmt.Sprintf("%02d:%02d.%03d", m, s, ms)
+	m := d / time.Minute
+	d -= m * time.Minute
+	s := d / time.Second
+	if disableMillisecond {
+		return fmt.Sprintf("%02d:%02d", m, s)
+	}
+	ms := d % time.Second / time.Millisecond
+	return fmt.Sprintf("%02d:%02d.%03d", m, s, ms)
 }
 
 func formatTime(d time.Time, use12HourFormat bool) string {
@@ -105,7 +105,7 @@ func FlagColor(ColorString string) termbox.Attribute {
 func timeStringToSeconds(timeStr string) (int, error) {
 	parts := strings.Split(timeStr, ":")
 	if len(parts) != 3 {
-		return 0, fmt.Errorf("时间格式错误")
+		return 0, fmt.Errorf("invalid time format %q: expected HH:MM:SS", timeStr)
 	}
 
 	hours, err := strconv.Atoi(parts[0])

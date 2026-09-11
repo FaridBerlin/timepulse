@@ -103,7 +103,6 @@ COMMANDS:
    help, h       Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --color value, -c value  Set the string color see full color in
    --help, -h               show help
    --version, -v            print the version
 ```
